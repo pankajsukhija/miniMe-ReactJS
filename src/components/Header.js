@@ -26,7 +26,7 @@ export default class Header extends React.Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                     <Nav.Link href="#" onClick={() => this.changeActivityTo("Home")}>Home</Nav.Link>
-                    <Nav.Link href="#">Login</Nav.Link>
+                    <Nav.Link href="#" onClick={() => this.changeActivityTo("Login")}>Login</Nav.Link>
                     <Nav.Link href="#" onClick={() => this.changeActivityTo("SignUp")}>Signup</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

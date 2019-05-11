@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 export default class DisplayUsers extends React.Component {
-    //  Hard-coded object for testing without internet. Will change this back soon.
-/*
     constructor(props){
         super(props);
         this.state = {
@@ -45,8 +43,8 @@ export default class DisplayUsers extends React.Component {
             </Card>
             </div>
         )
-    } */
-    render(){
+    }
+/*    render(){
         let latestUsers = [{username : "Goku", about : "this is my about, i am a super saiyan"},
                             {username : "Gohan", about : "Hello There! I am Son Goku's son Gohan :) It's been a long time since I last trined."},
                             {username : "Bulma", about : "Where are you Vegeta ?"},
@@ -73,5 +71,5 @@ export default class DisplayUsers extends React.Component {
             </Card>
             </div>
         )
-    }
+    } */
 } 

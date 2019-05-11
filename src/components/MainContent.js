@@ -4,6 +4,7 @@ import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DisplayUsers from "./DisplayUsers"
 import SignupForm from "./SignupForm"
+import LoginForm from "./LoginForm"
 
 export default class MainContent extends React.Component {
 
@@ -15,24 +16,15 @@ export default class MainContent extends React.Component {
     }
 
     render(){
-        if (this.props.activity === "SignUp"){
-            console.log(this.props.activity)
-            return (
-                <div className="mainContent">
-                <Container>
-                <SignupForm/>
-                </Container>
-                </div>
-            )
-        }else{
-            console.log(this.state.activity)
-            return (
-                <div className="mainContent">
-                <Container>
-                <DisplayUsers/>
-                </Container>
-                </div>
-            )
-        }
+        // DisplayUsers is refreshed everytime you open home.
+        return (
+            <div className="mainContent">
+            <Container>
+            {this.props.activity === "SignUp" && <SignupForm/>}
+            {this.props.activity === "Home" && <DisplayUsers/>}
+            {this.props.activity === "Login" && <LoginForm/>}
+            </Container>
+            </div>
+        )
     }   
 }
