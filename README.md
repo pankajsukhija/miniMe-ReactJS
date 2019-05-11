@@ -1,5 +1,10 @@
 This is a ReactJS based UI for miniMeAPI using react-bootstrap for styling, and axios for http requests.
 
+![alt text](https://github.com/pankajsukhija/miniMe-ReactJS/raw/master/mini-me-react.JPG)
+
+
+![alt text](https://github.com/pankajsukhija/miniMe-ReactJS/raw/master/mini-me-react-2.JPG)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
