@@ -37,7 +37,8 @@ export default class Header extends React.Component {
                     <Nav.Link href="#" onClick={() => this.changeActivityTo("Home")}>Home</Nav.Link>
                     {!this.props.isLoggedIn && <Nav.Link href="#" onClick={() => this.changeActivityTo("Login")}>Login</Nav.Link> }
                     {this.props.isLoggedIn && <Nav.Link href="#" onClick={() => this.logOut()}>Logout</Nav.Link> }
-                    <Nav.Link href="#" onClick={() => this.changeActivityTo("SignUp")}>SignUp</Nav.Link>
+                    {this.props.isLoggedIn && <Nav.Link href="#" onClick={() => this.changeActivityTo("MyProfile")}>My Profile</Nav.Link> }
+                    {!this.props.isLoggedIn && <Nav.Link href="#" onClick={() => this.changeActivityTo("SignUp")}>SignUp</Nav.Link> }
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>

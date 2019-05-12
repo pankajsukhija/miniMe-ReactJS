@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      // Home / Login / SignUp / UserProfile
+      // Home / Login / SignUp / MyProfile / [UserProfile, {username}]
         activity : "Home",
         isLoggedIn : false,
         username : "",
@@ -40,7 +40,7 @@ class App extends Component {
   changeActivity(updatedActivity){
     // To be passed to child components to change the state of activity using callback
     this.setState({activity : updatedActivity})
-    // REMINDER : dont use .this with this.. hmm.. ?? it will screw you up!
+    // REMINDER : dont use .then with this.. hmm.. ?? it will screw you up!
   }
 
   render() {

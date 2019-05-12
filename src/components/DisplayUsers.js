@@ -10,6 +10,16 @@ export default class DisplayUsers extends React.Component {
         this.state = {
             latestUsers : [],
         }
+        this.changeActivityTo = this.changeActivityTo.bind(this);
+        this.usernameOnClick = this.usernameOnClick.bind(this);
+    }
+
+    usernameOnClick(username){
+        this.changeActivityTo(["UserProfile", username])
+    }
+
+    changeActivityTo(activityName){
+        this.props.changeActivity(activityName);
     }
 
     componentDidMount() {
@@ -17,7 +27,6 @@ export default class DisplayUsers extends React.Component {
         .then(res => res.data.result)
         .then((data) => {
           this.setState({ latestUsers: data })
-          console.log(data)
         })
         .catch(console.log)
     }
@@ -28,12 +37,13 @@ export default class DisplayUsers extends React.Component {
             <Card>
             <Card.Header><h2><b>Our Latest Users</b></h2></Card.Header>
             <div className="allUsers">
-            <Row>
+            <p>Visit a user's profile by clicking their username :)</p>
+            <Row className="userBox">
             {this.state.latestUsers.map((userData) => (
                     <Col sm={4}>
                     <div className="userData">
                     <i className="fas fa-poo fa-4x"></i>
-                    <h5 className="username">{userData.username}</h5>
+                    <h4 className="username" onClick={()=>this.usernameOnClick(userData.username)}>{userData.username}</h4>
                     <h6 className="userAbout">{userData.about}</h6>
                     </div>
                     </Col>

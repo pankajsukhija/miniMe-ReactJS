@@ -26,8 +26,8 @@ export default class LoginForm extends React.Component{
         let name = target.name;
         this.setState({
             [name] : target.value
-          })
-        }
+        })
+    }
 
     handleSubmit(){
         this.setState({
@@ -63,7 +63,7 @@ export default class LoginForm extends React.Component{
     render(){
         if (this.props.isLoggedIn){
             return(
-                <div className="loginFor">
+                <div className="loginForm">
                 <Card>
                 <Card.Header><h2><b>Login Page</b></h2></Card.Header>
                 <Card.Body>You are logged in as <b>{this.props.username}</b> :)</Card.Body>
@@ -89,7 +89,7 @@ export default class LoginForm extends React.Component{
                     <Button variant="primary" type="button" onClick={() => this.handleSubmit()}>
                         Login
                     </Button>
-                    {this.state.alertShow && <Alert className="signupAlert" variant={this.state.alertVariant}>{this.state.alertMsg}</Alert>}
+                    {this.state.alertShow && <Alert className="loginAlert" variant={this.state.alertVariant}>{this.state.alertMsg}</Alert>}
                 </Form>
                 </div>
                 </Card>
