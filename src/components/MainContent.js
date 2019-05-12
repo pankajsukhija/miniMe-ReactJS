@@ -10,10 +10,13 @@ export default class MainContent extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            activity : this.props.activity
-        }
+        this.changeLogInState = this.changeLogInState.bind(this);
     }
+
+    changeLogInState(isLoggedIn, username){
+        // To be passed to child component for callback
+        this.props.changeLogInState(isLoggedIn, username)
+      }
 
     render(){
         // DisplayUsers is refreshed everytime you open home.
@@ -22,7 +25,8 @@ export default class MainContent extends React.Component {
             <Container>
             {this.props.activity === "SignUp" && <SignupForm/>}
             {this.props.activity === "Home" && <DisplayUsers/>}
-            {this.props.activity === "Login" && <LoginForm/>}
+            {this.props.activity === "Login" && <LoginForm changeLogInState = {this.changeLogInState} 
+            isLoggedIn = {this.props.isLoggedIn} username = {this.props.username}/> }
             </Container>
             </div>
         )
